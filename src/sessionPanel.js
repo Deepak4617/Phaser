@@ -13,12 +13,12 @@ const Session = ({ session, onEnd }) => {
   }, [counter, session, onEnd]);
 
   return (
-    <div>
+    <>
       <p>Session ID: {session.id}</p>
       <p>Start Time: {session.startTime}</p>
       <p>End Time: {session.endTime}</p>
       <p>Counter: {counter}</p>
-    </div>
+    </>
   );
 };
 
