@@ -101,6 +101,7 @@ const PhaserGame = ({ sessionId, counter, onGameEnd, startTime }) => {
       });
     }
 
+    
     function update() {
       // Ball will automatically move and bounce due to physics configuration
     }
