@@ -83,7 +83,6 @@ const PhaserGame = ({ sessionId, counter, onGameEnd, startTime }) => {
     }
 
     function onTick() {
-      // console.log(soundPlaying)
       setCurrentCounter(prevCounter => {
         if (prevCounter > 0) {
           if (!soundPlaying) {
