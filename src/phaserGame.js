@@ -107,7 +107,7 @@ const PhaserGame = ({ sessionId, counter, onGameEnd, startTime }) => {
   };
 
   return (
-    <div>
+    <>
       <button onClick={startGame}>Start Session</button>
       <div>
         <p>Session ID: {sessionId}</p>
@@ -116,7 +116,7 @@ const PhaserGame = ({ sessionId, counter, onGameEnd, startTime }) => {
         <p>Counter: {currentCounter}</p> 
       </div>
       <div id="phaser-container" />
-    </div>
+    </>
   );
 };
 
