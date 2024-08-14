@@ -84,7 +84,7 @@ const PhaserGame = ({ sessionId, counter, onGameEnd, startTime }) => {
         this.load.image('background', backgroundImage);
         this.load.audio('tick', tickSound);
       }
-      
+
 
       function create() {
         this.add.image(400, 300, 'background');
@@ -120,6 +120,7 @@ const PhaserGame = ({ sessionId, counter, onGameEnd, startTime }) => {
         setSessionActive(true);
       }
 
+      
       function onTick() {
         setCurrentCounter(prevCounter => {
           if (prevCounter > 0) {

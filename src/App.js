@@ -11,6 +11,7 @@ const App = () => {
 
     setSessions([...sessions, { id: newSessionId, counter: newCounter, startTime }]);
   };
+  
 
   const handleGameEnd = (sessionId, endTime) => {
     console.log(`Session ${sessionId} ended`);
