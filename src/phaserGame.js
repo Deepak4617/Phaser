@@ -24,7 +24,6 @@ const PhaserGame = ({ sessionId, counter, onGameEnd }) => {
       onGameEnd(sessionId, endTime);
       setSessionActive(false);
 
-      // Check if the session ID already exists in the session history
       setSessions(prevSessions => {
         const sessionExists = prevSessions.some(session => session.sessionId === sessionId);
         if (!sessionExists) {
@@ -140,11 +139,8 @@ const PhaserGame = ({ sessionId, counter, onGameEnd }) => {
       }
 
       function update() {
-        // Ball will automatically move and bounce due to physics configuration
-        // But it will be stopped by setting velocity to zero in onTick when counter reaches zero
       }
     } else {
-      // Reset the game state for restarting the session
       const scene = gameRef.current.scene.getScene('mainScene');
       if (scene) {
         scene.ball.setPosition(400, 300);
@@ -189,20 +185,6 @@ const PhaserGame = ({ sessionId, counter, onGameEnd }) => {
       >
         Restart Game
       </button>
-      {/* <div style={{
-        display: "block",
-        marginLeft: '66%',
-        marginTop: '-50%',
-      }}>
-        <h3>Session History</h3>
-        <ul>
-          {sessions.map((session, index) => (
-            <li key={index}>
-              Session ID: {session.sessionId}, Start: {session.startTime.toLocaleTimeString()}, End: {session.endTime.toLocaleTimeString()}
-            </li>
-          ))}
-        </ul>
-      </div> */}
     </>
   );
 };

@@ -7,7 +7,6 @@ const App = () => {
   const startNewSession = () => {
     const newSessionId = Math.random().toString(36).substr(2, 9);
     const newCounter = Math.floor(Math.random() * 91) + 30; 
-    const startTime = new Date();
 
     setSessions([...sessions, { id: newSessionId, counter: newCounter }]);
   };
@@ -31,7 +30,6 @@ const App = () => {
           sessionId={session.id}
           counter={session.counter}
           onGameEnd={handleGameEnd}
-          startTime={session.startTime}
           endTime={session.endTime}
         />
       ))}
