@@ -9,7 +9,7 @@ const App = () => {
     const newCounter = Math.floor(Math.random() * 91) + 30; 
     const startTime = new Date();
 
-    setSessions([...sessions, { id: newSessionId, counter: newCounter, startTime }]);
+    setSessions([...sessions, { id: newSessionId, counter: newCounter }]);
   };
   
 
