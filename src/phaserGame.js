@@ -4,7 +4,7 @@ import ballImage from './assets/image/ball.png';
 import backgroundImage from './assets/image/back.jpg';
 import tickSound from './assets/js/audio/tick.mp3';
 
-const PhaserGame = ({ sessionId, counter, onGameEnd }) => {
+const PhaserGame = ({ counter, onGameEnd }) => {
   const gameRef = useRef(null);
   const [currentCounter, setCurrentCounter] = useState(counter);
   const [sessionActive, setSessionActive] = useState(false);
@@ -12,6 +12,7 @@ const PhaserGame = ({ sessionId, counter, onGameEnd }) => {
   const [gameEndTime, setGameEndTime] = useState(null);
   const [sessions, setSessions] = useState([]);
   const [startTime, setStartTime] = useState(null);
+  const [sessionId, setSessionId] = useState(null); 
 
   useEffect(() => {
     if (currentCounter <= 0) {
@@ -47,6 +48,9 @@ const PhaserGame = ({ sessionId, counter, onGameEnd }) => {
   }, [currentCounter]);
 
   const startGame = () => {
+    const newSessionId = Math.random().toString(36).substr(2, 9); 
+    setSessionId(newSessionId);
+
     if (!audioContextResumed) {
       if (Phaser.Sound.Context) {
         Phaser.Sound.Context.resume().then(() => {
